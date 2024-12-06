@@ -1,0 +1,8 @@
+#spring.profiles.active=dev
+server.port=9001
+spring.application.name=site
+server.servlet.context-path=/antilob
+spring.web.resources.static-locations=file:C://Dev//Java//Antilob/site/www
+logging.level.org.springframework.jdbc.core = TRACE
+
+

@@ -1,0 +1,24 @@
+<div id="pagecontent" th:fragment="pagecontent">
+
+    <script>
+        memberId = [[${memberId}]];
+        lastname = "[[${lastname}]]";
+        firstname = "[[${firstname}]]";
+    </script>
+
+
+    <H1 class="maintitle">Resultats de : [[${firstname}]] [[${lastname}]] </H1>
+
+    <table id="classement" cellspacing="4" >
+        <tbody id="resultsBody">
+        <tr>
+            <th style="text-align:left">Nom Course</th>
+            <th style="text-align:left">Lieu</th>
+            <th>Distance</th>
+            <th>Points</th>
+
+        </tr>
+        </tbody>
+    </table>
+    <script th:src="@{/js/memberresults.js}"></script>
+</div>

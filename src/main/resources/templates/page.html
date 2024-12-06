@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+<!-- php  include_once "htmlheader.php" ? -->
+<head th:insert="~{htmlheader.html::header}"></head>
+<body onresize="updateMenu()" >
+<div id="main">
+    <div id="main2">
+<!--         <?php if ( !($isMobile) ) { ?> -->
+<!--         <?php include "leftColumn.php"?> -->
+        <head th:insert="~{leftColumn.html::leftColumn}"></head>
+<!--        <?php } ?> -->
+        <div id="rightColumn">
+            <table class="rcMain" cellpadding="0" border="0" cellspacing="0">
+                <tbody>
+                <!-- *****************  -->
+                <!-- BANDEAU SUPERIEUR  -->
+                <!-- *****************  -->
+
+                <tr>
+                    <!-- colonne de gauche -->
+
+                    <!-- ******* -->
+                    <!-- Header  -->
+                    <!-- *****  -->
+                    <td class="header">
+                        <div th:insert="~{top.html::top}"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu"><div id="menuContainer"><div th:insert="~{menu.html::menu}"></div>
+<!--                        <?php if (isset($_SESSION["user"])) {?>
+                        <h2> Bienvenue dans l'espace "Membres" </h2>
+                        <?php } ?>-->
+                    </div>
+                </tr>
+                <tr>
+                    <!-- contenu principal -->
+                    <td style="text-align: center; background-color: rgba(204, 204, 204, 0.2); margin-left: 29px; vertical-align:top;">
+                        <table style="width:100%">
+                            <tr>
+                                 <td style="width:95%;vertical-align:top;" >
+                                     <div th:include="~{__${page}__}"></td>
+                                <td style="width:25%;vertical-align:top; height:1000px;"></td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

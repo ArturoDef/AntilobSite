@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div id="pagecontent" th:fragment="pagecontent">
+    <style>
+        #ClassementContainer {
+            padding-left: 2%;
+            text-align: left;
+        }
+        #reglement H1 {
+            text-align: left;
+        }
+        #reglement H2{
+            text-align: left;
+        }
+        #reglement H3{
+            text-align: left;
+        }
+
+        #reglement p {
+            text-align:left
+        }
+
+        #reglement li{
+            text-align:left
+        }
+    </style>
+
+
+    <H1 class="maintitle">Classement Challenge club</H1>
+    <div id="ClassementContainer">
+        <table id="classement" cellspacing="4" >
+            <tbody id="challengeclubBody">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Nbre de courses</th>
+                <th>Distance totale</th>
+                <th>Points</th>
+                <th></th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <script th:src="@{/js/challengeclub.js}"></script>
+</div>

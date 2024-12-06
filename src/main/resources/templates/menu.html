@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="menu">
+	<script>//
+	  function updateMenu(){
+	//	  alert("updatemenu");
+	//  liHome=document.getElementById("liHome");
+	  aHome=document.getElementById("aHome");
+	  aelInfo=document.getElementById("ainfoclub");
+	  elImgHome=document.getElementById("imgHome");
+	  elImgHome.height=aelInfo.offsetHeight;
+	//  liHome.style.width=elImgHome.offsetWidth*1.2;
+	//  liHome.style.backgroundColor="white";
+	  aHome.style.backgroundColor="#f5f5f5";
+	  }
+			</script>
+	<table style="width:100%">
+	  <tr>
+		<td style="width:100%">
+			<div id="mySidenav" class="sidenav">
+				<ul id="menu">
+					<li class="menuItem">
+						<div style="display:inline;" >
+							<a id="aHome" href="/antilob">
+								<img id="imgHome" src="/antilob/images/index.png" style="max-height:10%"/>
+							</a>
+						</div>
+					</li>
+						<li class="menuItem" id="infoclub">
+						  <a href="#">Info club</a>
+						  <ul class="sublevel">
+							<li class="menuItem"><a id="ainfoclub" href="/antilob/presentation">Présentation</a></li>
+							<li class="menuItem"><a href="#">Activités 2024</a>
+								<ul class="sublevel">
+								  <!-- <li class="menuItem"><a id="ainfoclub" href="<?php echo WEB_ROOT ?>page.php?page=journeeclub">Journée club</a></li> -->
+								  <!-- <li class="menuItem"><a id="ainfoclub" href="<?php echo WEB_ROOT ?>page.php?page=coteopale">Trail de la côte d'Opale</a></li> -->
+								  <li class="menuItem">Trail de Bertrix</li>
+							  </ul>
+							</li>
+						  </ul>
+					  </li>
+						<li class="menuItem"><a href="#">Challenge club</a>
+							<ul class="sublevel">
+							  <li class="menuItem"><a href="/antilob/challengerules">Règlement</a></li>
+							  <li class="menuItem"><a href="/antilob/raceresults">Classements Courses</a></li>
+							  <li class="menuItem"><a href="/antilob/challengeclub">Classements Challenge</a></li>
+							  <li class="menuItem"><a href="#">Archive</a>
+								<ul class="sublevel">>
+								  <li class="menuItem"><a href="#">2023</a>
+									<ul>
+									  <li class="menuItem"><a href="<?php echo WEB_ROOT ?>page.php?page=classementcourses&an=2023">Classements Courses</a></li>
+									  <li class="menuItem"><a href="<?php echo WEB_ROOT ?>page.php?page=challengeclub&an=2023">Classements Challenge</a></li>
+									</ul>
+								  </li>
+								</ul>
+							  </li>
+							</ul>
+						  <li class="menuItem"><a href="<?php echo WEB_ROOT ?>page.php?page=calendrier">Calendrier</a></li>
+						<li class="menuItem"><a href="#">Nos Organisations</a>
+							<ul class="sublevel">
+							  <li class="menuItem"><a href="<?php echo WEB_ROOT ?>page.php?page=heze2024">Jogging de Heze</a></li>
+							  <?php //<li class="menuItem"><a href="<?php echo WEB_ROOT >page.php?page=ceroux2023">Enfer de Céroux</a></li>				  ?>
+							</ul>
+							</li>
+					  <?php   if(!isset($_SESSION["user"])) {?>
+					  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>index.php">Espace membres</a></li><?php } ?>
+					  <?php   if(isset($_SESSION["user"])) {?>
+					   <li class="menuItem"><a href="#">Espace membres</a>
+						 <ul>
+							  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>listemembres.php">Liste des membres</a></li>
+							  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>page.php?page=homepagemanager">Gestion de la page d'accueil</a></li>
+							  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>page.php?page=racemanager">Encodage des résultats</a></li>
+							  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>page.php?page=updatepassword">Changement de mot de passe</a></li>
+							  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>form.php?form=sendMail">Envoi d'un mail</a></li>
+						 </ul>
+						</li><?php
+
+						} ?>
+
+					  <?php   if(isset($_SESSION["user"])) {?>
+					  <li class="menuItem"><a href="<?php echo MEMBER_ROOT ?>logout.php">Déconnection</a></li><?php } ?>
+					</ul>
+				</div>
+		</td>
+	</tr>
+	</table>
+
+	<img id="imgHome2" src="/antilob/images/index.png" width="0" height="0" onload="updateMenu()"/>
+
+</div>

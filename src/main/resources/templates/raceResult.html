@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div id="pagecontent" th:fragment="pagecontent">
+    <style>
+        #tableHeaderTR{
+            outline: 2px solid black;
+        }
+         #ClassementContainer {
+             padding-left: 2%;
+             text-align: left;
+         }
+        #reglement H1 {
+            text-align: left;
+        }
+        #reglement H2{
+            text-align: left;
+        }
+        #reglement H3{
+            text-align: left;
+        }
+
+        #reglement p {
+            text-align:left
+        }
+
+        #reglement li{
+            text-align:left
+        }
+    </style>
+    <script>
+        raceId = [[${raceId}]];
+        console.log("raceId:"+raceId);
+        nbrClub = [[${nbrClub}]];
+    </script>
+
+    <H1 th:text="${raceLocation}+':'+${nbrParticipants}+' participants'"> </H1>
+
+    <H1 class="maintitle" th:text=" 'Nombre Antilobs: '+ ${nbrClub}"></H1>
+    <H1 class="maintitle">Classement</H1>
+    <div id="ClassementContainer">
+        <table id="classement" cellspacing="4" >
+            <tbody id="resultsBody">
+
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Place</th>
+                <th>temps</th>
+                <th>Points</th>
+            </tr>
+            </tbody>
+        </table>
+        <script th:src="@{/js/raceresults.js}"></script>
+    </div>
+</div>
